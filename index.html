@@ -1,166 +1,607 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Vijay Singh Rathore</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vijay Singh Rathore — AML & Financial Crime Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f5f0e8;
+    --muted: #8892b0;
+    --text: #ccd6f6;
+    --white: #e6f1ff;
+  }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Vijay Singh Portfolio<br />
-						</h1>
-						<p>Data Analyst skilled in SQl,Excel and Python <a href="https://www.linkedin.com/in/vijay-singh-rathore-m9057298763/">@LinkedIn</a> 
-						</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  html { scroll-behavior: smooth; }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Vijay Singh</a>
-					</header>
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/vijay-singh-rathore-m9057298763/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
-							
-							<li><a href="https://github.com/vijaysinghrathor" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    letter-spacing: 0.03em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 13px;
+    font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
 
-				<!-- Main -->
-					<div id="main">
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 1rem;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--gold-light);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+  .hero-desc {
+    color: var(--muted); font-size: 15px; line-height: 1.8;
+    max-width: 480px; margin-bottom: 2rem;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: rgba(201,168,76,0.1); }
+  .btn-ghost {
+    padding: 0.75rem 2rem;
+    background: transparent; border: 1px solid rgba(136,146,176,0.3);
+    color: var(--muted); font-family: 'DM Sans', sans-serif;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none; transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://github.com/vijaysinghrathor/BankingDomain_python_project/blob/main/project.ipynb">Python project on Banking Domain<br />
-									</a></h2>
-									<p>In this python project I tried to show bank details customer details and withdraw and deposite in bank account through input from end user</p>
-								</header>
-								<a href="https://github.com/vijaysinghrathor/BankingDomain_python_project/blob/main/project.ipynb" class="image main"><img src="images/Bank.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/vijaysinghrathor/BankingDomain_python_project/blob/main/project.ipynb" class="button large">View Poject</a></li>
-								</ul>
-							</article>
+  /* Stats card */
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .stat-box {
+    background: var(--navy-mid);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .stat-box:hover { background: rgba(17,34,64,0.8); }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; color: var(--gold);
+    display: block; margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/vijaysinghrathor/Boosting-Promising-Apps-on-Google-Play-Store/blob/main/Python%20predictive%20model%20building%20for%20Google%20Playstore%20app.ipynb">Python Project Google Play Store<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/vijaysinghrathor/Boosting-Promising-Apps-on-Google-Play-Store/blob/main/Python%20predictive%20model%20building%20for%20Google%20Playstore%20app.ipynb" class="image fit"><img src="images/python_project_on_google_playStore.png" alt="" /></a>
-									
-									<ul class="actions special">
-										<li><a href="https://github.com/vijaysinghrathor/Boosting-Promising-Apps-on-Google-Play-Store/blob/main/Python%20predictive%20model%20building%20for%20Google%20Playstore%20app.ipynb" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-									
-										<h2><a href="assets/SQL Project on Employee performance.pdf">MySQL Project<br />
-										</a></h2>
-									</header>
-									<a href="assets/SQL Project on Employee performance.pdf" class="image fit"><img src="images/Sql.png" alt="" /></a>
-<!-- 								</p>Comming Soon</p> -->
-									<ul class="actions special">
-										<li><a href="assets/SQL Project on Employee performance.pdf" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="#">Power BI<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/vijaysinghrathor" class="image fit"><img src="images/powerbi.jpeg" alt="" /></a>
-								</p>Comming Soon</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/vijaysinghrathor" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://public.tableau.com/app/profile/vijay.singh.rathore/viz/pro_16895811506380/Dashboard1">Tableau Project<br />
-										</a></h2>
-									</header>
-									<a href="https://public.tableau.com/app/profile/vijay.singh.rathore/viz/pro_16895811506380/Dashboard1" class="image fit"><img src="images/tebleau.png" alt="" /></a>
-<!-- 								</p>Comming Soon</p> -->
-									<ul class="actions special">
-										<li><a href="https://public.tableau.com/app/profile/vijay.singh.rathore/viz/pro_16895811506380/Dashboard1" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									
+  /* SECTION */
+  .section-wrap { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+  .section-line {
+    width: 40px; height: 2px; background: var(--gold);
+    margin-bottom: 3rem;
+  }
 
-						
+  /* ABOUT */
+  .about-grid {
+    display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start;
+  }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .tag {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light); font-size: 12px;
+    letter-spacing: 0.05em;
+  }
 
-					
+  /* EXPERIENCE */
+  .exp-item { border-left: 1px solid rgba(201,168,76,0.2); padding-left: 2rem; margin-bottom: 3rem; position: relative; }
+  .exp-item::before {
+    content: '';
+    position: absolute; left: -5px; top: 6px;
+    width: 9px; height: 9px;
+    background: var(--gold); border-radius: 50%;
+  }
+  .exp-period { font-size: 12px; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.3rem; }
+  .exp-role { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--white); margin-bottom: 0.15rem; }
+  .exp-company { font-size: 14px; color: var(--muted); margin-bottom: 1rem; }
+  .exp-points { list-style: none; }
+  .exp-points li {
+    color: var(--muted); font-size: 14px; padding: 0.25rem 0;
+    padding-left: 1.2rem; position: relative;
+  }
+  .exp-points li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 5px; }
+  .exp-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .badge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold-light); font-size: 11px; letter-spacing: 0.05em;
+  }
 
-				
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Jaipur Rajasthan<br />
-								India</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">+91 9057298763</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">vijaysighrathoreajay@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/vijay-singh-rathore-m9057298763/" class="icon brands alt fa-linkedin"><span class="label">Twitter</span></a></li>
-									
-									<li><a href="https://github.com/vijaysinghrathor" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .skill-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.1);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .skill-card:hover { border-color: rgba(201,168,76,0.4); }
+  .skill-card-title { font-weight: 500; color: var(--white); margin-bottom: 1rem; font-size: 14px; letter-spacing: 0.05em; }
+  .skill-item {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+  .skill-name { font-size: 13px; color: var(--muted); }
+  .skill-bar { width: 80px; height: 3px; background: rgba(255,255,255,0.08); }
+  .skill-fill { height: 100%; background: var(--gold); }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+  /* CERTIFICATIONS */
+  .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .cert-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.1);
+    padding: 1.5rem 2rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: border-color 0.2s;
+  }
+  .cert-card:hover { border-color: rgba(201,168,76,0.35); }
+  .cert-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 14px; font-weight: 600;
+  }
+  .cert-name { color: var(--white); font-size: 14px; font-weight: 500; margin-bottom: 0.2rem; }
+  .cert-body { color: var(--muted); font-size: 12px; margin-bottom: 0.4rem; }
+  .cert-status {
+    display: inline-block; padding: 0.15rem 0.6rem;
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25);
+    color: var(--gold-light); font-size: 11px; letter-spacing: 0.05em;
+  }
 
-			</div>
+  /* CONTACT */
+  .contact-inner {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .contact-heading { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 1rem; }
+  .contact-desc { color: var(--muted); font-size: 14px; margin-bottom: 2rem; }
+  .contact-items { list-style: none; }
+  .contact-items li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .contact-items li:last-child { border: none; }
+  .contact-items a { color: var(--gold-light); text-decoration: none; font-size: 14px; }
+  .contact-items a:hover { color: var(--gold); }
+  .contact-items span.label { color: var(--muted); font-size: 12px; display: block; margin-bottom: 2px; }
+  .avail-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(29,158,117,0.4);
+    color: #5dcaa5; font-size: 12px; letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+  .avail-dot { width: 7px; height: 7px; background: #5dcaa5; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  footer {
+    text-align: center; padding: 2rem; border-top: 1px solid rgba(201,168,76,0.08);
+    color: var(--muted); font-size: 12px; letter-spacing: 0.05em;
+  }
 
-	</body>
+  /* Animations */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-in.d1 { transition-delay: 0.1s; }
+  .fade-in.d2 { transition-delay: 0.2s; }
+  .fade-in.d3 { transition-delay: 0.3s; }
+
+  /* RESUME DOWNLOAD BUTTON */
+  .resume-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+  }
+  .resume-btn:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 11px; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .section-wrap { padding: 4rem 1.5rem; }
+    .hero-grid, .about-grid, .contact-inner, .cert-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">VSR</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="min-height:100vh; display:flex; align-items:center; padding:8rem 4rem 4rem; position:relative; overflow:hidden;" id="home">
+  <div style="position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%);pointer-events:none;"></div>
+  <div class="hero-grid">
+    <div class="fade-in">
+      <p class="hero-eyebrow">Financial Crime & Compliance</p>
+      <h1 class="hero-name">Vijay Singh<br>Rathore</h1>
+      <p class="hero-title">AML & Financial Crime Analyst</p>
+      <p class="hero-desc">3+ years investigating complex financial crime cases across banking and insurance. Specialising in AML, KYC/EDD, SAR documentation, and sanctions screening — with 98% quality accuracy and a 96% SLA adherence rate.</p>
+      <div class="hero-cta">
+        <a href="#experience" class="btn-primary">View Experience</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+        <a href="Vijay_Resume.pdf" download class="resume-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
+      </div>
+    </div>
+    <div class="fade-in d2">
+      <div class="hero-stats">
+        <div class="stat-box">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Quality Accuracy</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">96%</span>
+          <span class="stat-label">SLA Adherence</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">7–8</span>
+          <span class="stat-label">Cases Daily</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">4×</span>
+          <span class="stat-label">R&R Award</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="fade-in">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="section-line"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a Financial Crime & Compliance Analyst based in Jaipur, India — currently with Genpact's Financial Crime Operations unit. My work sits at the intersection of regulatory knowledge and investigative precision: reviewing high-risk cases, documenting suspicious activity, and protecting institutions from financial crime exposure.</p>
+          <p>My background spans banking (Genpact) and insurance (HDFC Life, PNB MetLife), giving me a cross-sector view of AML risk. I work with industry-standard tools including World-Check and LexisNexis, and operate within FATF, FATCA, CRS, and PMLA 2002 frameworks.</p>
+          <p>I'm currently pursuing my CAMS certification and actively seeking a senior AML Analyst or Financial Crime Investigator role — with a focus on international opportunities in the UAE, UK, or Singapore.</p>
+          <div class="tags">
+            <span class="tag">FATF 40 Recommendations</span>
+            <span class="tag">FATCA & CRS</span>
+            <span class="tag">PMLA 2002</span>
+            <span class="tag">Risk-Based Approach</span>
+            <span class="tag">World-Check</span>
+            <span class="tag">LexisNexis</span>
+            <span class="tag">CAMS (Pursuing)</span>
+            <span class="tag">Open to Relocation</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-card" style="margin-bottom:1rem;">
+            <div class="skill-card-title">Education</div>
+            <p style="color:var(--gold-light);font-size:14px;font-weight:500;margin-bottom:0.25rem;">B.Sc. Information Technology</p>
+            <p style="color:var(--muted);font-size:13px;">S.S. Jain Subodh P.G. College<br>Jaipur, Rajasthan · 2021</p>
+          </div>
+          <div class="skill-card" style="margin-bottom:1rem;">
+            <div class="skill-card-title">Languages</div>
+            <p style="color:var(--muted);font-size:13px;margin-bottom:0.3rem;">🇬🇧 English — C1 Proficiency (Fluent)</p>
+            <p style="color:var(--muted);font-size:13px;">🇮🇳 Hindi — Native</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title">Work Authorisation</div>
+            <p style="color:var(--muted);font-size:13px;">Indian National · Open to international relocation</p>
+            <p style="color:var(--gold-light);font-size:13px;margin-top:0.5rem;">UAE · UK · Singapore · Canada · Australia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="fade-in">
+      <p class="section-label">Career</p>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+
+      <div class="exp-item">
+        <p class="exp-period">Feb 2024 — Present</p>
+        <p class="exp-role">AML & Financial Crime Analyst</p>
+        <p class="exp-company">Genpact · Financial Crime Operations · Jaipur, India</p>
+        <ul class="exp-points">
+          <li>Investigate 7–8 complex AML cases daily, conducting full CDD and Enhanced Due Diligence (EDD) for retail and corporate clients</li>
+          <li>Review and disposition transaction monitoring alerts, identifying suspicious patterns including structuring, layering, and unusual cross-border activity</li>
+          <li>Author detailed SAR/STR case narratives documenting suspicious activity and regulatory rationale in line with FATF and internal AML policy standards</li>
+          <li>Execute sanctions, PEP, and adverse media screening using World-Check and LexisNexis, reducing false-positive escalations through risk-based disposition</li>
+          <li>Verify source of funds, source of wealth, and beneficial ownership for complex corporate and high-net-worth clients as part of EDD reviews</li>
+          <li>Support regulatory reporting, compliance testing, and internal audit readiness across all assigned caseloads</li>
+        </ul>
+        <div class="exp-badges">
+          <span class="badge">98% quality accuracy</span>
+          <span class="badge">96% SLA adherence</span>
+          <span class="badge">4× R&R Award winner</span>
+          <span class="badge">7–8 complex cases daily</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <p class="exp-period">Sep 2023 — Jan 2024</p>
+        <p class="exp-role">Compliance & KYC Officer</p>
+        <p class="exp-company">PNB MetLife India Insurance · Jaipur, India</p>
+        <ul class="exp-points">
+          <li>Conducted AML/KYC compliance reviews during customer onboarding, performing identity verification, risk profiling, and documentation validation</li>
+          <li>Identified and escalated discrepancies flagged as potential financial crime risks; maintained accurate audit-ready records per IRDAI and AML guidelines</li>
+          <li>Supported regulatory reporting and internal compliance reviews</li>
+        </ul>
+        <div class="exp-badges">
+          <span class="badge">Zero audit findings</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <p class="exp-period">Jan 2022 — Jul 2023</p>
+        <p class="exp-role">AML & KYC Compliance Executive</p>
+        <p class="exp-company">HDFC Life Insurance · Agency Channel · Jaipur, India</p>
+        <ul class="exp-points">
+          <li>Conducted KYC verification and AML compliance checks for new customers per SEBI, IRDAI, and internal AML policy requirements</li>
+          <li>Performed periodic risk assessments and EDD reviews for high-risk customer profiles, flagging accounts for enhanced monitoring</li>
+          <li>Assisted in transaction monitoring reviews, identifying and documenting suspicious activity patterns for escalation</li>
+          <li>Supported audit reviews and compliance documentation processes for regulatory examination preparedness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="fade-in">
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">Core Skills</h2>
+      <div class="section-line"></div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-title">AML Investigations</div>
+          <div class="skill-item"><span class="skill-name">Transaction Monitoring</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">SAR / STR Writing</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">CDD / EDD</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Structuring & Layering</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Beneficial Ownership</span><div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Screening & KYC</div>
+          <div class="skill-item"><span class="skill-name">Sanctions Screening</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">PEP Screening</span><div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Adverse Media</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Source of Funds Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Risk Profiling</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Regulatory Frameworks</div>
+          <div class="skill-item"><span class="skill-name">FATF 40 Recs.</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">FATCA & CRS</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">PMLA 2002</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Risk-Based Approach</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">SEBI / IRDAI</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Tools & Technology</div>
+          <div class="skill-item"><span class="skill-name">World-Check</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">LexisNexis</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">MS Excel (Advanced)</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">SQL (Basic)</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">CRM Platforms</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-wrap">
+    <div class="fade-in">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-line"></div>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-icon">CA</div>
+          <div>
+            <p class="cert-name">CAMS — Certified Anti-Money Laundering Specialist</p>
+            <p class="cert-body">Association of Certified Anti-Money Laundering Specialists (ACAMS)</p>
+            <span class="cert-status">Pursuing</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">IC</div>
+          <div>
+            <p class="cert-name">ICA Certificate in AML</p>
+            <p class="cert-body">International Compliance Association (ICA)</p>
+            <span class="cert-status">Pursuing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="fade-in">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="section-line"></div>
+      <div class="contact-inner">
+        <div>
+          <div class="avail-badge"><span class="avail-dot"></span>Open to Opportunities</div>
+          <p class="contact-heading">Let's Connect</p>
+          <p class="contact-desc">I'm actively seeking Senior AML Analyst or Financial Crime Investigator roles — open to international placement in the UAE, UK, Singapore, Canada, or Australia. Comfortable with immediate joining and rotational shifts.</p>
+          <a href="mailto:vijaysinghrathoreajay@gmail.com" class="btn-primary">Send an Email</a>
+        </div>
+        <div>
+          <ul class="contact-items">
+            <li>
+              <span class="label">Email</span>
+              <a href="mailto:vijaysinghrathoreajay@gmail.com">vijaysinghrathoreajay@gmail.com</a>
+            </li>
+            <li>
+              <span class="label">Phone</span>
+              <a href="tel:+919057298763">+91 9057298763</a>
+            </li>
+            <li>
+              <span class="label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/vijay-singh-rathore-m9057298763/" target="_blank">linkedin.com/in/vijaysinghrathore</a>
+            </li>
+            <li>
+              <span class="label">GitHub</span>
+              <a href="https://github.com/vijaysinghrathor" target="_blank">github.com/vijaysinghrathor</a>
+            </li>
+            <li>
+              <span class="label">Location</span>
+              <span style="color:var(--text);font-size:14px;">Jaipur, Rajasthan, India</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Vijay Singh Rathore &nbsp;·&nbsp; AML & Financial Crime Analyst &nbsp;·&nbsp; Jaipur, India</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
 </html>
